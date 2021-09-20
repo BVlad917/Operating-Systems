@@ -1,0 +1,2 @@
+4. Write a C program that will read from keyboard N numbers, for each number it will generate a child process to whom it will send the number. 
+The child process will check if the number is a prime number and it will return a response to the parent that will display it on the screen. 

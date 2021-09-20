@@ -1,0 +1,3 @@
+5. Write a C program that will read from keyboard a number and will generate M child processes.
+    The parent will trigger a "cascade" propagation, meaning that it will send the number to the C1, C1 will send the number incremented by 1 to C2, C2 will send the received number to C3 after it increased the number with 1 as well and so one, 
+    until the number (increased after each send) will reach CM that will display the result on the screen. 

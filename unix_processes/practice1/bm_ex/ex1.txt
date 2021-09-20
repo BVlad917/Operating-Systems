@@ -1,0 +1,5 @@
+1. Write a C program that will read from keyboard an array of N numbers and it will generate 3 child processes. The main process will send to each of the child processes the array which will do the following:
+    - c1: compute maximum 
+    - c2: compute minimum 
+    - c3: compute average 
+The results of the child processes will be returned to the part that will display them on the screen. 
