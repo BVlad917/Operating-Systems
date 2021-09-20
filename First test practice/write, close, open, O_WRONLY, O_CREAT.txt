@@ -1,0 +1,8 @@
+To get access to `O_WRONLY`, `O_CREAT` you need `#include <fcntl.h>`
+
+To use `write()`, `read()`, and `close()` and not get errors asking if we wanted `fwrite()`, `pwrite()`, `pclose()`, `fread()`, `pread()`, etc, you need `#include <unistd.h>`
+
+To use `open()` you also need `#include <sys/stat.h>` (maybe, I dunno, I used open w/o it)
+
+Maybe also do this: `#include <sys/types.h>`, `#include <sys/stat.h>`
+

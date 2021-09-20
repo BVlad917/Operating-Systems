@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<sys/types.h>
+#include<sys/wait.h>
+#include <stdlib.h>
+/**
+ 5. Write a C program that will read from keyboard a number and will generate M child processes.
+The parent will trigger a "cascade" propagation, meaning that it will send the number to the C1,
+C1 will send the number incremented by 1 to C2, C2 will send the received number to C3 after
+it increased the number with 1 as well and so on, until the number (increased after each send)
+will reach CM that will display the result on the screen.
+ * */
+void fun(int p2c[])
+{
+        if(fork()==0)
+        {
+                int m,n;
+                read(p2c[0],&m,sizeof(int));
+                read(p2c[0],&n,sizeof(int));
+                if(m>1)
+                {
+                        m--;
+                        n++;
+                        write(p2c[1],&m,sizeof(int));
+                        write(p2c[1],&n,sizeof(int));
+                        fun(p2c);
+                }
+                else if(m==1)
+                {
+                        printf("Result is: %d.\n",n);
+                }
+                exit(0);
+        }
+        wait(0);
+}
+int main(int argc,char*argv[])
+{
+        int n,m=5;
+        printf("Enter m: ");
+        scanf("%d",&m);
+        printf("Enter n: ");
+        scanf("%d",&n);
+        if(m<1)
+        {
+                printf("Nothing.\n");
+                return 0;
+        }
+        int p2c[2];
+        pipe(p2c);
+        int pid=fork();
+        if(pid==0)
+        {
+                fun(p2c);
+                exit(0);
+        }
+        write(p2c[1],&m,sizeof(int));
+        write(p2c[1],&n,sizeof(int));
+        wait(0);
+        close(p2c[0]);
+        close(p2c[1]);
+        return 0;
+}

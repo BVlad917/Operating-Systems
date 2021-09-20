@@ -1,0 +1,9 @@
+this is file2
+it has multiple lines of text
+oh how cool is it
+
+this is a line 
+
+and another
+
+end
