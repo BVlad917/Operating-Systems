@@ -1,0 +1,24 @@
+1. Write a script shell that gets as an input (argumens) 3 directories followed by a list of files. The script will copy the files that contain at least 10 lines with more than 5 words in directory 1, 
+and the files that contain at least 10 lines with less than 5 words in directory 2. For the files that do not match any criteria, it will move them to directory 3.
+2. Write a shell script that it will iterate over the homedirectories of the users existing in the system and it will display on the screen for each one of them, their username and the sum of the file sizes found in it (files needs to be searched recursively).
+3. Write a shell script that it will continously monitor a directory and it will display a message on the screen if for any of the existing files in that directory there was added a word that start and ends with a vowel (will be considered only files from the first level).
+4. Write a shell script that will sort all the words from a file in ascending order (the sorted result must be saved in the same file).
+5. Write a shell script that will verify if a list of N numbers (N given as argument) read from the keyboard are prime or not.
+6. Write a shell script that will sort a list of numbers using bubble sort.
+7. Write a shell script that based on a number (argument 1) and a pattern type (argument 2) will generate and display on the screen a structure like:
+Pattern 1
+Input: 6
+Output:
+     #
+    ##
+   ###
+  ####
+ #####
+######
+
+Pattern 2:
+Input: 3
+Output:
+    #
+   ###
+  #####
