@@ -8,3 +8,5 @@
         - OS architecture
         - Memory management
         - etc...
+
+Course website: http://www.cs.ubbcluj.ro/~rares/course/os/
